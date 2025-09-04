@@ -1,6 +1,34 @@
 'use client'
-import React, { useState, useEffect } from 'react';
-// import { supabase } from '@/utils/supabase/client';
+import React, { useState } from 'react';
+
+// TypeScript interfaces
+interface Project {
+  id: number;
+  name: string;
+  status: string;
+  progress: number;
+  budget: string;
+  manager: string;
+  location: string;
+  aiOptimized: boolean;
+}
+
+interface AIResponse {
+  id: number;
+  type: string;
+  content: string;
+  timestamp: Date;
+  actions?: Array<{label: string; action: string}>;
+  attachments?: Array<{type: string; name: string; size: string}>;
+}
+
+interface Message {
+  id: number;
+  type: string;
+  content: string;
+  timestamp: Date;
+  actions?: Array<{label: string; action: string}>;
+}
 
 const BasePointPlatform = () => {
   const [activeModule, setActiveModule] = useState('Dashboard')
@@ -13,7 +41,6 @@ const BasePointPlatform = () => {
     aiCredits: 2847,
     lastLogin: new Date()
   })
-  const [selectedProject, setSelectedProject] = useState<any>(null)
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
   const [notifications] = useState([
     { id: 1, type: 'ai', message: 'SiteGenie completed risk analysis for Highway Project', time: '2 min ago', read: false },
@@ -41,7 +68,7 @@ const BasePointPlatform = () => {
 
   // Enhanced SiteGenie AI Assistant Component
   const SiteGenieComponent = () => {
-    const [messages, setMessages] = useState([
+    const [messages, setMessages] = useState<Message[]>([
       {
         id: 1,
         type: 'ai',
@@ -69,7 +96,7 @@ const BasePointPlatform = () => {
     const handleSendMessage = () => {
       if (!inputValue.trim()) return
       
-      const userMessage = {
+      const userMessage: Message = {
         id: messages.length + 1,
         type: 'user',
         content: inputValue,
@@ -88,7 +115,7 @@ const BasePointPlatform = () => {
     }
 
     const handleAdvancedAction = (action: string) => {
-      const userMessage = {
+      const userMessage: Message = {
         id: messages.length + 1,
         type: 'user',
         content: action,
@@ -100,14 +127,14 @@ const BasePointPlatform = () => {
       
       setTimeout(() => {
         setIsTyping(false)
-        const aiResponse = generateAdvancedAIResponse(action, messages.length, true)
+        const aiResponse = generateAdvancedAIResponse(action, messages.length)
         setMessages(prev => [...prev, aiResponse])
       }, Math.random() * 3000 + 2000)
     }
 
-    const generateAdvancedAIResponse = (input: string, messageId: number, isAdvancedAction = false) => {
+    const generateAdvancedAIResponse = (input: string, messageId: number): AIResponse => {
       const lowerInput = input.toLowerCase()
-      let response: any = {
+      const response: AIResponse = {
         id: messageId + 1,
         type: 'ai',
         content: '',
@@ -136,7 +163,7 @@ I'm analyzing your requirements and generating a comprehensive contract with the
 • **Safety Requirements**: Site-specific safety protocols integrated
 
 **🔍 AI Insights:**
-*"Based on similar projects, adding a 'Equipment Breakdown' clause could prevent potential disputes. I've included this with 72-hour replacement guarantee terms."*
+*"Based on similar projects, adding an Equipment Breakdown clause could prevent potential disputes. I&apos;ve included this with 72-hour replacement guarantee terms."*
 
 **📄 Contract Ready For Review:**
 - **Document Type**: Construction Service Agreement
@@ -159,7 +186,7 @@ Would you like me to export this contract as PDF, send it for digital signatures
       } else if (lowerInput.includes('safety') || lowerInput.includes('protocol')) {
         response.content = `⚠️ **Advanced Safety Protocol AI - Predictive Risk Analysis**
 
-I've completed a comprehensive safety analysis using machine learning and real-time data:
+I&apos;ve completed a comprehensive safety analysis using machine learning and real-time data:
 
 **🛡️ AI Safety Assessment Results:**
 • **Current Safety Score**: 9.4/10 (Exceptional)
@@ -197,7 +224,7 @@ Your safety protocols are now 23% more comprehensive than industry standards!`
       } else if (lowerInput.includes('budget') || lowerInput.includes('cost') || lowerInput.includes('optimize')) {
         response.content = `💰 **AI Budget Intelligence - Predictive Cost Optimization**
 
-I've analyzed your project finances using advanced algorithms and market intelligence:
+I&apos;ve analyzed your project finances using advanced algorithms and market intelligence:
 
 **📈 Financial Performance Analysis:**
 • **Current Projects**: $8.2M total value
@@ -230,9 +257,9 @@ I've analyzed your project finances using advanced algorithms and market intelli
       } else {
         response.content = `🤖 **Advanced AI Assistant Ready**
 
-I've been analyzing your BasePoint operations and have several intelligent insights ready:
+I&apos;ve been analyzing your BasePoint operations and have several intelligent insights ready:
 
-**Today's AI Highlights:**
+**Today&apos;s AI Highlights:**
 • Processed 47 automation tasks this morning
 • Identified $12K cost savings opportunity
 • Generated 3 safety protocol updates
@@ -291,7 +318,7 @@ What would you like me to help optimize today?`
               </div>
               
               <div className="flex-1 p-3 md:p-6 overflow-y-auto space-y-4 md:space-y-6 bg-gradient-to-b from-gray-50 to-white">
-                {messages.map((message: any) => (
+                {messages.map((message) => (
                   <div key={message.id} className={`flex ${message.type === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div className={`w-full md:max-w-4xl p-3 md:p-4 rounded-xl md:rounded-2xl shadow-md ${
                       message.type === 'user' 
@@ -303,7 +330,7 @@ What would you like me to help optimize today?`
                       </div>
                       {message.actions && message.actions.length > 0 && (
                         <div className="flex flex-wrap gap-2 mt-3 md:mt-4 pt-3 border-t border-gray-200">
-                          {message.actions.map((action: any, idx: number) => (
+                          {message.actions.map((action, idx) => (
                             <button
                               key={idx}
                               onClick={() => handleAdvancedAction(action.action)}
@@ -520,7 +547,9 @@ What would you like me to help optimize today?`
 
   // Projects Component
   const ProjectsComponent = () => {
-    const projects = [
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+    
+    const projects: Project[] = [
       { id: 1, name: 'Downtown Office Complex', status: 'In Progress', progress: 75, budget: '$2.1M', manager: 'Sarah Johnson', location: 'Downtown', aiOptimized: true },
       { id: 2, name: 'Highway Bridge Repair', status: 'In Progress', progress: 45, budget: '$800K', manager: 'Mike Chen', location: 'Highway 101', aiOptimized: true },
       { id: 3, name: 'Mining Site Expansion', status: 'Planning', progress: 30, budget: '$1.2M', manager: 'Alex Rodriguez', location: 'Site Alpha', aiOptimized: false },
@@ -593,6 +622,14 @@ What would you like me to help optimize today?`
             </div>
           ))}
         </div>
+
+        {selectedProject && (
+          <div className="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p className="text-sm text-blue-700">
+              Selected: <strong>{selectedProject.name}</strong> - Click outside to deselect
+            </p>
+          </div>
+        )}
       </div>
     )
   }
@@ -633,7 +670,7 @@ What would you like me to help optimize today?`
           <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">EXTERNAL PORTAL</span>
         </div>
         <p className="text-sm text-blue-700">
-          This is BasePoint's public equipment marketplace where all network members can view and create listings.
+          This is BasePoint&apos;s public equipment marketplace where all network members can view and create listings.
         </p>
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Smart Equipment Marketplace</h2>
