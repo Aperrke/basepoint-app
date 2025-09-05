@@ -7,7 +7,7 @@ export default function LandingPage() {
     {
       id: 1,
       type: 'ai',
-      content: 'G\'day! I\'m SiteGenie, your AI assistant for construction and mining operations across Australia. How can I help you today?'
+      content: 'G&apos;day! I&apos;m SiteGenie, your AI assistant for construction and mining operations across Australia. How can I help you today?'
     }
   ])
   const [chatInput, setChatInput] = useState('')
@@ -43,15 +43,15 @@ export default function LandingPage() {
     const lowerInput = input.toLowerCase()
     
     if (lowerInput.includes('contract')) {
-      return '📄 I can help generate custom contracts compliant with Australian standards! Our AI can create construction agreements, equipment hire agreements, subcontractor agreements, and WHS compliance documents. Would you like to see a demo of our contract generation?'
+      return '📄 I can help generate custom contracts! Our AI can create construction agreements, equipment hire agreements, subcontractor agreements, and safety compliance documents. Would you like to see a demo of our contract generation?'
     } else if (lowerInput.includes('safety')) {
-      return '⚠️ Safety first, mate! I create comprehensive WHS protocols including site-specific hazard assessments, equipment safety checklists, emergency procedures, and training documentation compliant with Safe Work Australia guidelines. What type of safety protocol do you need?'
+      return '⚠️ Safety first, mate! I create comprehensive safety protocols including site-specific hazard assessments, equipment safety checklists, emergency procedures, and training documentation. What type of safety protocol do you need?'
     } else if (lowerInput.includes('equipment')) {
-      return '🚛 I can optimise your equipment management with predictive maintenance, utilisation analysis, and smart recommendations. Our AI tracks 95% equipment uptime for clients across Australia, ensuring compliance with Australian Standards!'
+      return '🚛 I can optimise your equipment management with predictive maintenance, utilisation analysis, and smart recommendations. Our AI tracks 95% equipment uptime for clients across Australia!'
     } else if (lowerInput.includes('demo') || lowerInput.includes('try')) {
-      return '🎯 Beauty! Click "Try BasePoint Platform" above to access the full SaaS platform with SiteGenie AI, project management, and all features. No credit card required!'
+      return '🎯 Beauty! Click &quot;Try BasePoint Platform&quot; above to access the full SaaS platform with SiteGenie AI, project management, and all features. No credit card required!'
     } else {
-      return '🤖 I\'m SiteGenie, your construction AI assistant! I can help with contract generation, WHS safety protocols, equipment optimisation, project planning, and cost analysis. What would you like to explore?'
+      return '🤖 I&apos;m SiteGenie, your construction AI assistant! I can help with contract generation, safety protocols, equipment optimisation, project planning, and cost analysis. What would you like to explore?'
     }
   }
 
@@ -186,7 +186,7 @@ export default function LandingPage() {
               AI-Driven Solutions for Every Australian Operation
             </h2>
             <p className="text-xl text-gray-600">
-              Whether you're a major contractor, mining company, or specialty trade across Australia
+              Whether you&apos;re a major contractor, mining company, or specialty trade across Australia
             </p>
           </div>
 
@@ -226,7 +226,7 @@ export default function LandingPage() {
                 <div className="text-6xl mb-4">🏗️</div>
                 <h4 className="text-xl font-semibold text-gray-900 mb-2">Live Australian Demo Available</h4>
                 <p className="text-gray-600 mb-4">
-                  Experience BasePoint's AI capabilities with real Australian construction data and SiteGenie interactions tailored for local conditions.
+                  Experience BasePoint&apos;s AI capabilities with real Australian construction data and SiteGenie interactions tailored for local conditions.
                 </p>
                 <button 
                   onClick={() => window.location.href = '/dashboard'}
@@ -244,8 +244,8 @@ export default function LandingPage() {
       <section className="py-16 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <blockquote className="text-2xl md:text-3xl font-light italic mb-8">
-            "BasePoint's AI transformed our operations across Queensland and NSW. SiteGenie generates contracts in minutes, 
-            predicts equipment needs, and reduced our project delays by 40% while maintaining full WHS compliance."
+            &quot;BasePoint&apos;s AI transformed our operations across Queensland and NSW. SiteGenie generates contracts in minutes, 
+            predicts equipment needs, and reduced our project delays by 40% while maintaining full WHS compliance.&quot;
           </blockquote>
           <div className="flex items-center justify-center gap-4">
             <div className="w-12 h-12 bg-orange-500 rounded-full flex items-center justify-center font-bold text-lg">
@@ -266,7 +266,7 @@ export default function LandingPage() {
             Ready to Transform Your Australian Operations with AI?
           </h2>
           <p className="text-xl text-orange-100 mb-8">
-            Join thousands of Australian contractors using BasePoint's AI platform to deliver projects on time and under budget with full WHS compliance.
+            Join thousands of Australian contractors using BasePoint&apos;s AI platform to deliver projects on time and under budget with full WHS compliance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -367,7 +367,7 @@ export default function LandingPage() {
                     ? 'bg-orange-500 text-white' 
                     : 'bg-white text-gray-800 shadow-sm border'
                 }`}>
-                  <p className="text-sm">{message.content}</p>
+                  <p className="text-sm" dangerouslySetInnerHTML={{ __html: message.content }}></p>
                 </div>
               </div>
             ))}
