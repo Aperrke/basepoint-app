@@ -50,7 +50,7 @@ const BasePointPlatform = () => {
   const [aiInsights] = useState([
     { type: 'cost', message: 'Potential $15K savings identified on concrete supplier switch', priority: 'high', action: 'Review supplier options' },
     { type: 'safety', message: '45 consecutive days without incidents - AI protocols working effectively', priority: 'info', action: 'Continue current procedures' },
-    { type: 'equipment', message: 'Excavator utilization can be increased 23% with schedule optimization', priority: 'medium', action: 'Optimize schedule' }
+    { type: 'equipment', message: 'Excavator utilisation can be increased 23% with schedule optimisation', priority: 'medium', action: 'Optimise schedule' }
   ])
 
   const navItems = [
@@ -72,12 +72,12 @@ const BasePointPlatform = () => {
       {
         id: 1,
         type: 'ai',
-        content: `👋 Hello ${currentUser.name.split(' ')[0]}! I'm SiteGenie, your advanced AI assistant. I've been analyzing your recent project data and have some intelligent insights ready.\n\n🎯 **Quick Stats:**\n• 23 AI-generated contracts this month\n• $47K in cost savings identified\n• 98% safety compliance maintained\n• 156 automated tasks completed\n\nWhat would you like to work on today?`,
+        content: `👋 G'day ${currentUser.name.split(' ')[0]}! I'm SiteGenie, your advanced AI assistant. I've been analysing your recent project data and have some intelligent insights ready.\n\n🎯 **Quick Stats:**\n• 23 AI-generated contracts this month\n• $47K in cost savings identified\n• 98% WHS safety compliance maintained\n• 156 automated tasks completed\n\nWhat would you like to work on today?`,
         timestamp: new Date(),
         actions: [
           { label: 'Generate Contract', action: 'contract' },
-          { label: 'Safety Analysis', action: 'safety' },
-          { label: 'Cost Optimization', action: 'cost' }
+          { label: 'WHS Analysis', action: 'safety' },
+          { label: 'Cost Optimisation', action: 'cost' }
         ]
       }
     ])
@@ -85,12 +85,12 @@ const BasePointPlatform = () => {
     const [isTyping, setIsTyping] = useState(false)
 
     const advancedActions = [
-      { icon: '📄', title: 'Smart Contract Generator', description: 'AI-powered legal document creation with compliance checking', action: 'Generate comprehensive construction contract with AI compliance analysis' },
-      { icon: '⚠️', title: 'Safety Protocol AI', description: 'Automated safety procedures with risk assessment', action: 'Create advanced safety protocol with predictive risk modeling' },
-      { icon: '🔍', title: 'Project Risk Analyzer', description: 'Machine learning risk detection and mitigation', action: 'Analyze current projects for risks and optimization opportunities' },
-      { icon: '💰', title: 'Budget Intelligence', description: 'Predictive cost analysis and optimization', action: 'Optimize project budgets using predictive analytics and market intelligence' },
-      { icon: '🚛', title: 'Equipment AI', description: 'Smart equipment recommendations and maintenance', action: 'Analyze equipment needs and provide AI-powered optimization recommendations' },
-      { icon: '📊', title: 'Market Analytics', description: 'Real-time market intelligence and pricing', action: 'Generate market analysis report with pricing predictions and trends' }
+      { icon: '📄', title: 'Smart Contract Generator', description: 'AI-powered legal document creation with Australian compliance checking', action: 'Generate comprehensive construction contract with AI compliance analysis for Australian law' },
+      { icon: '⚠️', title: 'WHS Protocol AI', description: 'Automated safety procedures with risk assessment compliant with Safe Work Australia guidelines', action: 'Create advanced WHS safety protocol with predictive risk modelling' },
+      { icon: '🔍', title: 'Project Risk Analyser', description: 'Machine learning risk detection and mitigation for Australian conditions', action: 'Analyse current projects for risks and optimisation opportunities' },
+      { icon: '💰', title: 'Budget Intelligence', description: 'Predictive cost analysis and optimisation with AUD reporting', action: 'Optimise project budgets using predictive analytics and Australian market intelligence' },
+      { icon: '🚛', title: 'Equipment AI', description: 'Smart equipment recommendations and maintenance compliant with Australian Standards', action: 'Analyse equipment needs and provide AI-powered optimisation recommendations' },
+      { icon: '📊', title: 'Market Analytics', description: 'Real-time Australian market intelligence and pricing', action: 'Generate Australian market analysis report with pricing predictions and trends' }
     ]
 
     const handleSendMessage = () => {
@@ -146,138 +146,138 @@ const BasePointPlatform = () => {
       if (lowerInput.includes('contract') || lowerInput.includes('agreement')) {
         response.content = `🤖 **AI Contract Generator - Advanced Legal Intelligence**
 
-I'm analyzing your requirements and generating a comprehensive contract with the following AI enhancements:
+I'm analysing your requirements and generating a comprehensive contract with the following AI enhancements for Australian law:
 
 **✅ Contract Analysis Complete:**
-• Legal compliance check: **PASSED** (OSHA, local regulations)
+• Legal compliance check: **PASSED** (WHS Act, Fair Work Act, Australian Consumer Law)
 • Risk assessment score: **87/100** (Excellent)
-• Market rate validation: **Competitive** (within 3% of market average)
-• Clause optimization: **12 improvements** identified
+• Market rate validation: **Competitive** (within 3% of Australian market average)
+• Clause optimisation: **12 improvements** identified
 
 **📋 Generated Contract Features:**
-• **Smart Payment Terms**: AI-optimized milestone structure
-• **Risk Mitigation Clauses**: Automatically included based on project type
-• **Performance Bonds**: Calculated at optimal 15% rate
-• **Weather Protection**: Advanced force majeure provisions
-• **Cost Escalation**: Built-in material price adjustment mechanisms
-• **Safety Requirements**: Site-specific safety protocols integrated
+• **Smart Payment Terms**: AI-optimised milestone structure compliant with Security of Payment Acts
+• **Risk Mitigation Clauses**: Automatically included based on Australian project requirements
+• **Performance Bonds**: Calculated at optimal rate per Australian Standards
+• **Weather Protection**: Advanced force majeure provisions for Australian conditions
+• **Cost Escalation**: Built-in material price adjustment mechanisms (AUD)
+• **WHS Requirements**: Site-specific safety protocols integrated per Safe Work Australia guidelines
 
 **🔍 AI Insights:**
-*"Based on similar projects, adding an Equipment Breakdown clause could prevent potential disputes. I&apos;ve included this with 72-hour replacement guarantee terms."*
+*"Based on similar Australian projects, adding an Equipment Breakdown clause could prevent potential disputes. I&apos;ve included this with 72-hour replacement guarantee terms compliant with Australian Standards."*
 
 **📄 Contract Ready For Review:**
-- **Document Type**: Construction Service Agreement
+- **Document Type**: Australian Construction Service Agreement
 - **Page Count**: 12 pages
 - **Estimated Review Time**: 15 minutes
-- **Compliance Score**: 94% (Industry Leading)
+- **Compliance Score**: 94% (Australian Industry Leading)
 
 Would you like me to export this contract as PDF, send it for digital signatures, or make any specific modifications?`
 
         response.actions = [
           { label: 'Export PDF', action: 'export_pdf' },
           { label: 'Send for Signature', action: 'digital_signature' },
-          { label: 'Customize Terms', action: 'modify_contract' }
+          { label: 'Customise Terms', action: 'modify_contract' }
         ]
 
         response.attachments = [
-          { type: 'document', name: 'Construction_Agreement_AI_Generated.pdf', size: '847 KB' }
+          { type: 'document', name: 'Australian_Construction_Agreement_AI_Generated.pdf', size: '847 KB' }
         ]
 
-      } else if (lowerInput.includes('safety') || lowerInput.includes('protocol')) {
-        response.content = `⚠️ **Advanced Safety Protocol AI - Predictive Risk Analysis**
+      } else if (lowerInput.includes('safety') || lowerInput.includes('protocol') || lowerInput.includes('whs')) {
+        response.content = `⚠️ **Advanced WHS Protocol AI - Predictive Risk Analysis**
 
-I&apos;ve completed a comprehensive safety analysis using machine learning and real-time data:
+I&apos;ve completed a comprehensive safety analysis using machine learning and real-time Australian data:
 
-**🛡️ AI Safety Assessment Results:**
+**🛡️ AI WHS Assessment Results:**
 • **Current Safety Score**: 9.4/10 (Exceptional)
 • **Risk Prediction Model**: 95% accuracy rate
-• **Incident Prevention Rate**: 89% reduction vs. industry average
-• **Compliance Status**: 100% OSHA/MSHA compliant
+• **Incident Prevention Rate**: 89% reduction vs. Australian industry average
+• **Compliance Status**: 100% Safe Work Australia/State WHS Authority compliant
 
 **📊 Predictive Risk Analysis:**
-🔴 **High Priority**: Weather-related slip hazards (40% probability next 7 days)
-🟡 **Medium Priority**: Equipment fatigue on Excavator EX-204 (maintenance due in 5 days)
+🔴 **High Priority**: Weather-related slip hazards (40% probability next 7 days - Australian conditions)
+🟡 **Medium Priority**: Equipment fatigue on Excavator EX-204 (maintenance due in 5 days per Australian Standards)
 🟢 **Low Priority**: Standard site housekeeping protocols
 
-**🎯 AI-Generated Safety Protocols:**
+**🎯 AI-Generated WHS Protocols:**
 
 **1. Weather Risk Mitigation (Active Alert)**
-• Real-time weather monitoring integration
+• Real-time Australian Bureau of Meteorology integration
 • Automatic work suspension triggers at 25% precipitation probability
 • Enhanced anti-slip measures for high-traffic areas
-• Emergency shelter protocols within 30-second access
+• Emergency shelter protocols within 30-second access per Australian Standards
 
 **2. Equipment Safety Enhancement**
-• Predictive maintenance alerts 5 days before service due
-• Operator certification verification before equipment start
+• Predictive maintenance alerts 5 days before Australian Standards-required service
+• Operator certification verification before equipment start (compliant with state licensing requirements)
 • Proximity sensors for personnel safety zones
-• Automated daily equipment safety checklists
+• Automated daily equipment safety checklists per Safe Work Australia guidelines
 
-Your safety protocols are now 23% more comprehensive than industry standards!`
+Your WHS protocols are now 23% more comprehensive than Australian industry standards!`
 
         response.actions = [
           { label: 'Deploy Protocols', action: 'deploy_safety' },
-          { label: 'Schedule Training', action: 'safety_training' },
+          { label: 'Schedule WHS Training', action: 'safety_training' },
           { label: 'Equipment Alerts', action: 'equipment_monitoring' }
         ]
 
-      } else if (lowerInput.includes('budget') || lowerInput.includes('cost') || lowerInput.includes('optimize')) {
-        response.content = `💰 **AI Budget Intelligence - Predictive Cost Optimization**
+      } else if (lowerInput.includes('budget') || lowerInput.includes('cost') || lowerInput.includes('optimis')) {
+        response.content = `💰 **AI Budget Intelligence - Predictive Cost Optimisation**
 
-I&apos;ve analyzed your project finances using advanced algorithms and market intelligence:
+I&apos;ve analysed your project finances using advanced algorithms and Australian market intelligence:
 
 **📈 Financial Performance Analysis:**
-• **Current Projects**: $8.2M total value
-• **Profit Margin**: 18.7% (Above industry 15.2%)
+• **Current Projects**: $8.2M AUD total value
+• **Profit Margin**: 18.7% (Above Australian industry 15.2%)
 • **Cost Variance**: -2.3% (Under budget - Excellent!)
-• **AI Savings YTD**: $247K (12% improvement)
+• **AI Savings YTD**: $247K AUD (12% improvement)
 
-**🎯 Optimization Opportunities Identified:**
+**🎯 Optimisation Opportunities Identified:**
 
-**1. Material Cost Savings (High Impact - $47K potential)**
-• **Concrete Supplier Switch**: Local supplier 15% cheaper with same quality rating
-• **Steel Procurement**: Bulk purchase timing could save 8% next month
-• **Fuel Optimization**: Route planning AI could reduce fuel costs by 12%
+**1. Material Cost Savings (High Impact - $47K AUD potential)**
+• **Concrete Supplier Switch**: Local Australian supplier 15% cheaper with same quality rating
+• **Steel Procurement**: Bulk purchase timing could save 8% next month (Australian market conditions)
+• **Fuel Optimisation**: Route planning AI could reduce fuel costs by 12%
 
-**2. Labor Efficiency (Medium Impact - $23K potential)**
-• **Crew Optimization**: Reallocate 2 workers from Site A to Site B for 18% productivity gain
-• **Overtime Reduction**: Schedule optimization could eliminate 67% of overtime costs
+**2. Labour Efficiency (Medium Impact - $23K AUD potential)**
+• **Crew Optimisation**: Reallocate 2 workers from Site A to Site B for 18% productivity gain
+• **Overtime Reduction**: Schedule optimisation could eliminate 67% of overtime costs (Fair Work Act compliant)
 
 **🔮 Predictive Insights:**
-*"Market analysis indicates steel prices will drop 6% in 30 days. Delaying Phase 3 steel order could save $12,400. Weather predictions show optimal concrete pour window opening next Tuesday."*
+*"Australian market analysis indicates steel prices will drop 6% in 30 days. Delaying Phase 3 steel order could save $12,400 AUD. Weather predictions show optimal concrete pour window opening next Tuesday (BoM data)."*
 
 **ROI Impact**: Implementing these recommendations could increase overall project profitability by 5.7%!`
 
         response.actions = [
           { label: 'Apply Recommendations', action: 'apply_optimizations' },
           { label: 'Generate Savings Report', action: 'savings_report' },
-          { label: 'Market Analysis', action: 'detailed_market_analysis' }
+          { label: 'Australian Market Analysis', action: 'detailed_market_analysis' }
         ]
 
       } else {
         response.content = `🤖 **Advanced AI Assistant Ready**
 
-I&apos;ve been analyzing your BasePoint operations and have several intelligent insights ready:
+I&apos;ve been analysing your BasePoint Australian operations and have several intelligent insights ready:
 
 **Today&apos;s AI Highlights:**
 • Processed 47 automation tasks this morning
-• Identified $12K cost savings opportunity
-• Generated 3 safety protocol updates
-• Completed predictive maintenance analysis for 23 equipment units
+• Identified $12K AUD cost savings opportunity
+• Generated 3 WHS safety protocol updates
+• Completed predictive maintenance analysis for 23 equipment units (Australian Standards compliant)
 
 **My Advanced Capabilities:**
-• **Smart Contract Generation** - Legally compliant documents in under 60 seconds
-• **Predictive Risk Analysis** - 95% accuracy in identifying project risks  
-• **Cost Optimization** - Average 18% project savings through AI recommendations
-• **Safety Protocol Automation** - Comprehensive safety procedures tailored to your sites
-• **Market Intelligence** - Real-time pricing and trend analysis
-• **Equipment AI** - Predictive maintenance and optimal utilization strategies
+• **Smart Contract Generation** - Legally compliant Australian documents in under 60 seconds
+• **Predictive Risk Analysis** - 95% accuracy in identifying project risks for Australian conditions
+• **Cost Optimisation** - Average 18% project savings through AI recommendations
+• **WHS Safety Protocol Automation** - Comprehensive safety procedures tailored to Australian sites
+• **Australian Market Intelligence** - Real-time pricing and trend analysis
+• **Equipment AI** - Predictive maintenance and optimal utilisation strategies per Australian Standards
 
-What would you like me to help optimize today?`
+What would you like me to help optimise today?`
         
         response.actions = [
           { label: 'Cost Analysis', action: 'cost_analysis' },
-          { label: 'Safety Check', action: 'safety_analysis' },
+          { label: 'WHS Safety Check', action: 'safety_analysis' },
           { label: 'Equipment Status', action: 'equipment_check' }
         ]
       }
@@ -290,7 +290,7 @@ What would you like me to help optimize today?`
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 md:mb-8 gap-4">
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-gray-800 flex flex-wrap items-center gap-2 md:gap-3">
-              🤖 SiteGenie AI Command Center
+              🤖 SiteGenie AI Command Centre
               <div className="flex flex-wrap items-center gap-2">
                 <span className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-bold animate-pulse">
                   AI ACTIVE
@@ -300,7 +300,7 @@ What would you like me to help optimize today?`
                 </span>
               </div>
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">Your intelligent construction and mining operations assistant</p>
+            <p className="text-gray-600 text-sm md:text-base">Your intelligent Australian construction and mining operations assistant</p>
           </div>
         </div>
 
@@ -312,7 +312,7 @@ What would you like me to help optimize today?`
                   <h3 className="font-bold text-gray-800 text-base md:text-lg">Advanced AI Conversation</h3>
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                    <span className="text-xs md:text-sm text-gray-600">AI Online</span>
+                    <span className="text-xs md:text-sm text-gray-600">AI Online in Australia</span>
                   </div>
                 </div>
               </div>
@@ -371,7 +371,7 @@ What would you like me to help optimize today?`
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-                    placeholder="Ask SiteGenie about contracts, safety, optimization..."
+                    placeholder="Ask SiteGenie about contracts, WHS safety, optimisation..."
                     className="flex-1 border border-gray-300 rounded-xl px-3 md:px-4 py-2 md:py-3 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent text-sm md:text-base"
                     disabled={isTyping}
                     style={{ fontSize: '16px' }}
@@ -420,7 +420,7 @@ What would you like me to help optimize today?`
               <div className="space-y-3 md:space-y-4">
                 {[
                   { label: 'Tasks Completed', value: '2,847', progress: 87, color: 'orange' },
-                  { label: 'Cost Savings', value: '$247K', progress: 94, color: 'green' },
+                  { label: 'Cost Savings', value: '$247K AUD', progress: 94, color: 'green' },
                   { label: 'Accuracy Rate', value: '96%', progress: 96, color: 'blue' }
                 ].map((metric, index) => (
                   <div key={index} className="bg-white rounded-lg p-3 shadow">
@@ -463,10 +463,10 @@ What would you like me to help optimize today?`
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
           {[
-            { title: 'Active Projects', value: '24', subtitle: '🤖 AI-Optimized: 18', icon: '🏗️', color: 'blue' },
-            { title: 'AI Tasks Completed', value: '156', subtitle: '📄 Contracts: 23 | ⚠️ Safety: 12', icon: '🤖', color: 'orange' },
+            { title: 'Active Projects', value: '24', subtitle: '🤖 AI-Optimised: 18', icon: '🏗️', color: 'blue' },
+            { title: 'AI Tasks Completed', value: '156', subtitle: '📄 Contracts: 23 | ⚠️ WHS: 12', icon: '🤖', color: 'orange' },
             { title: 'Smart Assets', value: '89', subtitle: '🔧 Maintenance Due: 3', icon: '🚛', color: 'green' },
-            { title: 'AI Cost Savings', value: '$2.4M', subtitle: '📈 This Quarter', icon: '💰', color: 'purple' }
+            { title: 'AI Cost Savings', value: '$2.4M AUD', subtitle: '📈 This Quarter', icon: '💰', color: 'purple' }
           ].map((metric, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6">
               <div className="flex items-center justify-between">
@@ -504,7 +504,7 @@ What would you like me to help optimize today?`
             <div className="space-y-3">
               {[
                 { icon: '📄', title: 'Contract Generated', desc: 'Subcontractor Agreement - Electrical', time: '2 hrs ago' },
-                { icon: '⚠️', title: 'Safety Protocol Created', desc: 'Mining Site - Level 3 Procedures', time: '4 hrs ago' },
+                { icon: '⚠️', title: 'WHS Protocol Created', desc: 'Mining Site - Level 3 Procedures', time: '4 hrs ago' },
                 { icon: '🔍', title: 'Risk Analysis Completed', desc: 'Highway Project - Weather Impact', time: '1 day ago' }
               ].map((activity, index) => (
                 <div key={index} className="flex items-center gap-3 text-sm">
@@ -525,7 +525,7 @@ What would you like me to help optimize today?`
               {[
                 { priority: 'red', title: 'Review AI-Generated Contract', desc: 'Riverside Mall - Electrical Subcontract', time: 'Due Today' },
                 { priority: 'orange', title: 'Equipment Maintenance Alert', desc: 'Excavator EX-204 - Scheduled Service', time: '3 days' },
-                { priority: 'blue', title: 'Safety Protocol Update', desc: 'Mining Site Alpha - Quarterly Review', time: '1 week' }
+                { priority: 'blue', title: 'WHS Safety Protocol Update', desc: 'Mining Site Alpha - Quarterly Review', time: '1 week' }
               ].map((task, index) => (
                 <div key={index} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -550,10 +550,10 @@ What would you like me to help optimize today?`
     const [selectedProject, setSelectedProject] = useState<Project | null>(null)
     
     const projects: Project[] = [
-      { id: 1, name: 'Downtown Office Complex', status: 'In Progress', progress: 75, budget: '$2.1M', manager: 'Sarah Johnson', location: 'Downtown', aiOptimized: true },
-      { id: 2, name: 'Highway Bridge Repair', status: 'In Progress', progress: 45, budget: '$800K', manager: 'Mike Chen', location: 'Highway 101', aiOptimized: true },
-      { id: 3, name: 'Mining Site Expansion', status: 'Planning', progress: 30, budget: '$1.2M', manager: 'Alex Rodriguez', location: 'Site Alpha', aiOptimized: false },
-      { id: 4, name: 'Residential Complex', status: 'On Hold', progress: 15, budget: '$950K', manager: 'Emma Davis', location: 'Suburbs', aiOptimized: true }
+      { id: 1, name: 'Sydney CBD Office Complex', status: 'In Progress', progress: 75, budget: '$2.1M AUD', manager: 'Sarah Johnson', location: 'Sydney CBD', aiOptimized: true },
+      { id: 2, name: 'Pacific Highway Bridge Repair', status: 'In Progress', progress: 45, budget: '$800K AUD', manager: 'Mike Chen', location: 'NSW', aiOptimized: true },
+      { id: 3, name: 'Hunter Valley Mining Site Expansion', status: 'Planning', progress: 30, budget: '$1.2M AUD', manager: 'Alex Rodriguez', location: 'Hunter Valley', aiOptimized: false },
+      { id: 4, name: 'Melbourne Residential Complex', status: 'On Hold', progress: 15, budget: '$950K AUD', manager: 'Emma Davis', location: 'Melbourne', aiOptimized: true }
     ]
 
     return (
@@ -561,11 +561,11 @@ What would you like me to help optimize today?`
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Projects</h2>
-            <p className="text-gray-600">Manage and track all your construction and mining projects</p>
+            <p className="text-gray-600">Manage and track all your Australian construction and mining projects</p>
           </div>
           <button 
             className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 flex items-center gap-2"
-            onClick={() => alert('SiteGenie: I can help you create a new project with AI-powered planning, budget optimization, and resource allocation. What type of project would you like to start?')}
+            onClick={() => alert('SiteGenie: I can help you create a new project with AI-powered planning, budget optimisation, and resource allocation. What type of Australian project would you like to start?')}
           >
             🤖 Create Smart Project
           </button>
@@ -639,7 +639,7 @@ What would you like me to help optimize today?`
     <div className="p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Smart Asset Management</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">Asset management module with AI-powered predictive maintenance and utilization optimization.</p>
+        <p className="text-gray-600">Asset management module with AI-powered predictive maintenance and utilisation optimisation for Australian operations.</p>
       </div>
     </div>
   )
@@ -648,7 +648,7 @@ What would you like me to help optimize today?`
     <div className="p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Intelligent Workforce Management</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">Workforce management with AI-powered skill matching and compliance tracking.</p>
+        <p className="text-gray-600">Workforce management with AI-powered skill matching and Australian compliance tracking including Fair Work Act requirements.</p>
       </div>
     </div>
   )
@@ -657,7 +657,7 @@ What would you like me to help optimize today?`
     <div className="p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">AI Contract Management</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">Smart contract generation and automated compliance tracking.</p>
+        <p className="text-gray-600">Smart contract generation and automated Australian compliance tracking including Security of Payment Acts.</p>
       </div>
     </div>
   )
@@ -670,12 +670,12 @@ What would you like me to help optimize today?`
           <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">EXTERNAL PORTAL</span>
         </div>
         <p className="text-sm text-blue-700">
-          This is BasePoint&apos;s public equipment marketplace where all network members can view and create listings.
+          This is BasePoint&apos;s public equipment marketplace where all Australian network members can view and create listings.
         </p>
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Smart Equipment Marketplace</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">AI-powered equipment matching and recommendations.</p>
+        <p className="text-gray-600">AI-powered equipment matching and recommendations for Australian construction and mining operations.</p>
       </div>
     </div>
   )
@@ -688,12 +688,12 @@ What would you like me to help optimize today?`
           <span className="bg-blue-500 text-white px-2 py-1 rounded text-xs font-bold">EXTERNAL WEBSITE</span>
         </div>
         <p className="text-sm text-blue-700">
-          Job postings created here will be published on the public BasePoint careers website.
+          Job postings created here will be published on the public BasePoint careers website across Australia.
         </p>
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-6">AI Talent Recruitment</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">Smart candidate matching and automated screening.</p>
+        <p className="text-gray-600">Smart candidate matching and automated screening compliant with Australian employment law and Fair Work requirements.</p>
       </div>
     </div>
   )
@@ -705,7 +705,7 @@ What would you like me to help optimize today?`
         <span className="bg-green-100 text-green-600 px-2 py-1 rounded text-sm">AI-Enhanced</span>
       </h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">AI-powered insights and performance metrics with predictive analytics.</p>
+        <p className="text-gray-600">AI-powered insights and performance metrics with predictive analytics tailored for Australian markets and AUD reporting.</p>
       </div>
     </div>
   )
@@ -714,7 +714,7 @@ What would you like me to help optimize today?`
     <div className="p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Settings</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">Platform configuration and AI automation settings.</p>
+        <p className="text-gray-600">Platform configuration and AI automation settings with Australian compliance options.</p>
       </div>
     </div>
   )
@@ -773,7 +773,7 @@ What would you like me to help optimize today?`
                     setActiveModule(item.id)
                     if (window.innerWidth < 768) setSidebarCollapsed(true)
                   }}
-                  className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-lg transition-colors group ${
+                  className={`w-full flex items-center justify-between px-4 py-3 text-left rounded-lg transition-colours group ${
                     activeModule === item.id
                       ? 'bg-orange-100 text-orange-600 shadow-sm'
                       : item.isPortal
