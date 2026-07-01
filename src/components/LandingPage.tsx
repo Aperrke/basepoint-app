@@ -7,7 +7,7 @@ export default function LandingPage() {
     {
       id: 1,
       type: 'ai',
-      content: 'G&apos;day! I&apos;m SiteGenie, your AI assistant for construction and mining operations across Australia. How can I help you today?'
+      content: 'G&apos;day! I&apos;m SiteGenie, your AI assistant for all types of construction across Australia. How can I help you today?'
     }
   ])
   const [chatInput, setChatInput] = useState('')
@@ -94,12 +94,12 @@ export default function LandingPage() {
       <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-            AI-Powered Construction &<br />
-            <span className="text-orange-500">Mining Platform</span>
+            AI-Powered Platform for<br />
+            <span className="text-orange-500">All Construction</span>
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-            Meet <strong>SiteGenie</strong>, your intelligent assistant for project management, 
-            contract generation, WHS safety protocols, and operational optimisation across Australia.
+            Meet <strong>SiteGenie</strong>, your intelligent assistant for project management,
+            contract generation, WHS safety protocols, and operational optimisation — for every type of construction across Australia.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <button 
@@ -203,20 +203,20 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              AI-Driven Solutions for Every Australian Operation
+              AI-Driven Solutions for Every Australian Construction Sector
             </h2>
             <p className="text-xl text-gray-600">
-              Whether you&apos;re a major contractor, mining company, or specialty trade across Australia
+              Whether you&apos;re in residential, commercial, civil, or industrial construction across Australia
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Built for Australian Construction & Mining Excellence
+                Built for Every Type of Australian Construction
               </h3>
               <p className="text-lg text-gray-600 mb-6">
-                Manage multiple projects across Australia with AI-powered insights, automated WHS compliance, and predictive cost optimisation.
+                Manage residential, commercial, civil, and industrial projects across Australia with AI-powered insights, automated WHS compliance, and predictive cost optimisation.
               </p>
               <ul className="space-y-4">
                 {[
@@ -326,10 +326,10 @@ export default function LandingPage() {
       <section className="py-16 bg-orange-500">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your Australian Operations with AI?
+            Ready to Transform Your Construction Operations with AI?
           </h2>
           <p className="text-xl text-orange-100 mb-8">
-            Join thousands of Australian contractors using BasePoint&apos;s AI platform to deliver projects on time and under budget with full WHS compliance.
+            Join Australian construction businesses of all sizes using BasePoint&apos;s AI platform to deliver projects on time and under budget with full WHS compliance.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
@@ -354,7 +354,7 @@ export default function LandingPage() {
             <div>
               <div className="text-2xl font-bold text-orange-500 mb-4">BasePoint</div>
               <p className="text-gray-400 mb-4">
-                AI-powered construction and mining management platform with SiteGenie intelligence, designed for Australian conditions and WHS compliance.
+                AI-powered construction management platform with SiteGenie intelligence, built for every sector of the Australian construction industry.
               </p>
               <div className="flex gap-4">
                 <div className="w-8 h-8 bg-gray-700 rounded-full"></div>
@@ -375,10 +375,11 @@ export default function LandingPage() {
             <div>
               <h3 className="font-semibold mb-4 text-orange-400">Australian Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="/solutions/contractors" className="hover:text-white transition-colours">Major Contractors</a></li>
-                <li><a href="/solutions/mining" className="hover:text-white transition-colours">Mining Operations</a></li>
+                <li><a href="/solutions/residential" className="hover:text-white transition-colours">Residential Builders</a></li>
+                <li><a href="/solutions/commercial" className="hover:text-white transition-colours">Commercial Construction</a></li>
+                <li><a href="/solutions/civil" className="hover:text-white transition-colours">Civil & Infrastructure</a></li>
+                <li><a href="/solutions/industrial" className="hover:text-white transition-colours">Industrial Construction</a></li>
                 <li><a href="/solutions/trades" className="hover:text-white transition-colours">Specialty Trades</a></li>
-                <li><a href="/solutions/equipment" className="hover:text-white transition-colours">Equipment Hire Companies</a></li>
               </ul>
             </div>
             <div>
@@ -393,7 +394,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2025 BasePoint Australia. All rights reserved. Building the future of AI-powered construction and mining operations with full WHS compliance.</p>
+            <p>&copy; 2025 BasePoint Australia. All rights reserved. Building the future of AI-powered construction across every sector with full WHS compliance.</p>
           </div>
         </div>
       </footer>

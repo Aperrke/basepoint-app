@@ -300,7 +300,7 @@ What would you like me to help optimise today?`
                 </span>
               </div>
             </h2>
-            <p className="text-gray-600 text-sm md:text-base">Your intelligent Australian construction and mining operations assistant</p>
+            <p className="text-gray-600 text-sm md:text-base">Your intelligent AI assistant for every type of Australian construction</p>
           </div>
         </div>
 
@@ -504,7 +504,7 @@ What would you like me to help optimise today?`
             <div className="space-y-3">
               {[
                 { icon: '📄', title: 'Contract Generated', desc: 'Subcontractor Agreement - Electrical', time: '2 hrs ago' },
-                { icon: '⚠️', title: 'WHS Protocol Created', desc: 'Mining Site - Level 3 Procedures', time: '4 hrs ago' },
+                { icon: '⚠️', title: 'WHS Protocol Created', desc: 'Commercial High-Rise - Level 3 Procedures', time: '4 hrs ago' },
                 { icon: '🔍', title: 'Risk Analysis Completed', desc: 'Highway Project - Weather Impact', time: '1 day ago' }
               ].map((activity, index) => (
                 <div key={index} className="flex items-center gap-3 text-sm">
@@ -525,7 +525,7 @@ What would you like me to help optimise today?`
               {[
                 { priority: 'red', title: 'Review AI-Generated Contract', desc: 'Riverside Mall - Electrical Subcontract', time: 'Due Today' },
                 { priority: 'orange', title: 'Equipment Maintenance Alert', desc: 'Excavator EX-204 - Scheduled Service', time: '3 days' },
-                { priority: 'blue', title: 'WHS Safety Protocol Update', desc: 'Mining Site Alpha - Quarterly Review', time: '1 week' }
+                { priority: 'blue', title: 'WHS Safety Protocol Update', desc: 'Industrial Site Alpha - Quarterly Review', time: '1 week' }
               ].map((task, index) => (
                 <div key={index} className="flex items-center justify-between">
                   <div className="flex items-center gap-3">
@@ -552,7 +552,7 @@ What would you like me to help optimise today?`
     const projects: Project[] = [
       { id: 1, name: 'Sydney CBD Office Complex', status: 'In Progress', progress: 75, budget: '$2.1M AUD', manager: 'Sarah Johnson', location: 'Sydney CBD', aiOptimized: true },
       { id: 2, name: 'Pacific Highway Bridge Repair', status: 'In Progress', progress: 45, budget: '$800K AUD', manager: 'Mike Chen', location: 'NSW', aiOptimized: true },
-      { id: 3, name: 'Hunter Valley Mining Site Expansion', status: 'Planning', progress: 30, budget: '$1.2M AUD', manager: 'Alex Rodriguez', location: 'Hunter Valley', aiOptimized: false },
+      { id: 3, name: 'Hunter Valley Industrial Warehouse', status: 'Planning', progress: 30, budget: '$1.2M AUD', manager: 'Alex Rodriguez', location: 'Hunter Valley', aiOptimized: false },
       { id: 4, name: 'Melbourne Residential Complex', status: 'On Hold', progress: 15, budget: '$950K AUD', manager: 'Emma Davis', location: 'Melbourne', aiOptimized: true }
     ]
 
@@ -561,7 +561,7 @@ What would you like me to help optimise today?`
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-6 gap-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-800">Projects</h2>
-            <p className="text-gray-600">Manage and track all your Australian construction and mining projects</p>
+            <p className="text-gray-600">Manage and track all your Australian construction projects</p>
           </div>
           <button 
             className="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600 flex items-center gap-2"
@@ -675,7 +675,7 @@ What would you like me to help optimise today?`
       </div>
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Smart Equipment Marketplace</h2>
       <div className="bg-white rounded-lg shadow-md p-6">
-        <p className="text-gray-600">AI-powered equipment matching and recommendations for Australian construction and mining operations.</p>
+        <p className="text-gray-600">AI-powered equipment matching and recommendations for all Australian construction sectors.</p>
       </div>
     </div>
   )
