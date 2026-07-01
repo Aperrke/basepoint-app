@@ -16,6 +16,11 @@ export default function LandingPage() {
     setShowChatbot(!showChatbot)
   }
 
+  const handleFeatureClick = (featureId: string) => {
+    // Navigate to dashboard with specific module
+    window.location.href = `/dashboard?module=${featureId}`
+  }
+
   const handleChatSubmit = (message: string) => {
     if (!message.trim()) return
 
@@ -65,11 +70,13 @@ export default function LandingPage() {
             <div className="hidden md:flex space-x-8">
               <a href="#features" className="text-gray-600 hover:text-orange-500 transition-colours">Features</a>
               <a href="#solutions" className="text-gray-600 hover:text-orange-500 transition-colours">Solutions</a>
-              <a href="#pricing" className="text-gray-600 hover:text-orange-500 transition-colours">Pricing</a>
-              <a href="#about" className="text-gray-600 hover:text-orange-500 transition-colours">About</a>
+              <a href="/pricing" className="text-gray-600 hover:text-orange-500 transition-colours">Pricing</a>
+              <a href="/about" className="text-gray-600 hover:text-orange-500 transition-colours">About</a>
             </div>
             <div className="flex gap-4">
-              <button className="px-4 py-2 text-orange-500 border border-orange-500 rounded-lg hover:bg-orange-50 transition-colours">
+              <button 
+                onClick={() => window.location.href = '/login'}
+                className="px-4 py-2 text-orange-500 border border-orange-500 rounded-lg hover:bg-orange-50 transition-colours">
                 Sign In
               </button>
               <button 
@@ -123,7 +130,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Features Grid - Now Clickable */}
       <section id="features" className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-12">
@@ -140,38 +147,51 @@ export default function LandingPage() {
               {
                 icon: '🤖',
                 title: 'SiteGenie AI Assistant',
-                description: 'Your intelligent companion for contracts, WHS safety protocols, risk analysis, and project optimisation with 96% accuracy across Australian standards.'
+                description: 'Your intelligent companion for contracts, WHS safety protocols, risk analysis, and project optimisation with 96% accuracy across Australian standards.',
+                moduleId: 'SiteGenie'
               },
               {
                 icon: '📊',
                 title: 'Smart Project Management',
-                description: 'AI-powered scheduling, predictive budget tracking, and intelligent resource allocation that prevents 90% of delays in Australian conditions.'
+                description: 'AI-powered scheduling, predictive budget tracking, and intelligent resource allocation that prevents 90% of delays in Australian conditions.',
+                moduleId: 'Projects'
               },
               {
                 icon: '⚠️',
                 title: 'AI WHS Safety Protocols',
-                description: 'Automated safety procedures with real-time risk assessment compliant with Safe Work Australia guidelines. Achieve 45+ days without incidents using AI protocols.'
+                description: 'Automated safety procedures with real-time risk assessment compliant with Safe Work Australia guidelines. Achieve 45+ days without incidents using AI protocols.',
+                moduleId: 'Safety'
               },
               {
                 icon: '🚛',
                 title: 'Equipment Intelligence',
-                description: 'Predictive maintenance alerts and optimal utilisation recommendations. Increase uptime by 34% with AI insights, meeting Australian Standards requirements.'
+                description: 'Predictive maintenance alerts and optimal utilisation recommendations. Increase uptime by 34% with AI insights, meeting Australian Standards requirements.',
+                moduleId: 'Assets'
               },
               {
                 icon: '📄',
                 title: 'Smart Contract Generator',
-                description: 'AI-generated legal documents with 94% compliance score for Australian law. Create custom contracts in under 60 seconds.'
+                description: 'AI-generated legal documents with 94% compliance score for Australian law. Create custom contracts in under 60 seconds.',
+                moduleId: 'Contracts'
               },
               {
                 icon: '📈',
                 title: 'Predictive Analytics',
-                description: 'Data-driven insights with 95% accuracy in cost forecasting. Average 18% project savings through AI optimisation tailored for Australian markets.'
+                description: 'Data-driven insights with 95% accuracy in cost forecasting. Average 18% project savings through AI optimisation tailored for Australian markets.',
+                moduleId: 'Reports'
               }
             ].map((feature, index) => (
-              <div key={index} className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gray-100">
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <div 
+                key={index} 
+                onClick={() => handleFeatureClick(feature.moduleId)}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all hover:scale-105 border border-gray-100 cursor-pointer group"
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{feature.icon}</div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900 group-hover:text-orange-600 transition-colours">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed mb-4">{feature.description}</p>
+                <div className="flex items-center text-orange-500 font-medium group-hover:translate-x-2 transition-transform">
+                  Explore Feature →
+                </div>
               </div>
             ))}
           </div>
@@ -240,6 +260,49 @@ export default function LandingPage() {
         </div>
       </section>
 
+      {/* New Integration Features Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Seamless Business Integration
+            </h2>
+            <p className="text-xl text-gray-600">
+              Connect with the tools your team already uses
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100">
+              <div className="text-4xl mb-4">📧</div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Microsoft 365 Integration</h3>
+              <p className="text-gray-600 mb-4">Complete integration with Teams, SharePoint, Outlook, and Power BI for seamless collaboration.</p>
+              <div className="flex items-center text-blue-600 font-medium">
+                Coming Soon →
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100">
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">Mobile Field Access</h3>
+              <p className="text-gray-600 mb-4">Field workers can access all features, capture progress photos, and update project status on-site.</p>
+              <div className="flex items-center text-blue-600 font-medium">
+                In Development →
+              </div>
+            </div>
+
+            <div className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-all border border-gray-100">
+              <div className="text-4xl mb-4">📹</div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900">IoT & Camera Integration</h3>
+              <p className="text-gray-600 mb-4">Real-time monitoring of equipment, sites, and safety compliance through connected cameras and sensors.</p>
+              <div className="flex items-center text-blue-600 font-medium">
+                Beta Testing →
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonial */}
       <section className="py-16 bg-gray-900 text-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
@@ -275,7 +338,9 @@ export default function LandingPage() {
             >
               Start Free Trial
             </button>
-            <button className="px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-orange-500 transition-all">
+            <button 
+              onClick={() => window.location.href = '/contact'}
+              className="px-8 py-4 border-2 border-white text-white text-lg font-semibold rounded-lg hover:bg-white hover:text-orange-500 transition-all">
               Schedule Demo
             </button>
           </div>
@@ -300,30 +365,30 @@ export default function LandingPage() {
             <div>
               <h3 className="font-semibold mb-4 text-orange-400">Platform</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colours">SiteGenie AI</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Project Management</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">WHS Safety Protocols</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Equipment Management</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Contract Generator</a></li>
+                <li><a href="/dashboard?module=SiteGenie" className="hover:text-white transition-colours">SiteGenie AI</a></li>
+                <li><a href="/dashboard?module=Projects" className="hover:text-white transition-colours">Project Management</a></li>
+                <li><a href="/dashboard?module=Safety" className="hover:text-white transition-colours">WHS Safety Protocols</a></li>
+                <li><a href="/dashboard?module=Assets" className="hover:text-white transition-colours">Equipment Management</a></li>
+                <li><a href="/dashboard?module=Contracts" className="hover:text-white transition-colours">Contract Generator</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-orange-400">Australian Solutions</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colours">Major Contractors</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Mining Operations</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Specialty Trades</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Equipment Hire Companies</a></li>
+                <li><a href="/solutions/contractors" className="hover:text-white transition-colours">Major Contractors</a></li>
+                <li><a href="/solutions/mining" className="hover:text-white transition-colours">Mining Operations</a></li>
+                <li><a href="/solutions/trades" className="hover:text-white transition-colours">Specialty Trades</a></li>
+                <li><a href="/solutions/equipment" className="hover:text-white transition-colours">Equipment Hire Companies</a></li>
               </ul>
             </div>
             <div>
               <h3 className="font-semibold mb-4 text-orange-400">Support</h3>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colours">Help Centre</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">API Reference</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">WHS Compliance Guide</a></li>
-                <li><a href="#" className="hover:text-white transition-colours">Contact Support</a></li>
+                <li><a href="/support" className="hover:text-white transition-colours">Help Centre</a></li>
+                <li><a href="/docs" className="hover:text-white transition-colours">Documentation</a></li>
+                <li><a href="/api" className="hover:text-white transition-colours">API Reference</a></li>
+                <li><a href="/compliance" className="hover:text-white transition-colours">WHS Compliance Guide</a></li>
+                <li><a href="/contact" className="hover:text-white transition-colours">Contact Support</a></li>
               </ul>
             </div>
           </div>
